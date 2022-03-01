@@ -28,7 +28,7 @@
 <meta property="og:description" content="输入输出流使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-01T12:40:01.000Z">
-<meta property="article:modified_time" content="2022-03-01T12:59:16.289Z">
+<meta property="article:modified_time" content="2022-03-01T13:03:14.245Z">
 <meta property="article:author" content="ATing">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
 
 <ul>
 <li>获取输入有空格的字符串<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">getline</span>(cin,s)<span class="comment">//getline参数，第一个是流，第二个是字符串，第三个是分割符</span></span><br></pre></td></tr></table></figure>
-头文件为sstream</li>
+头文件为sstream。<sstream>库定义了三种类：istringstream、ostringstream和stringstream，分别用来进行流的输入、输出和输入输出操作。</li>
 <li>字符串流的赋值<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">istringstream <span class="title">i</span><span class="params">(s)</span></span>;<span class="comment">//直接给</span></span><br><span class="line">string ss;</span><br><span class="line"><span class="keyword">while</span>(i&gt;&gt;ss)&#123;<span class="comment">//拿出来</span></span><br><span class="line">    len=ss.<span class="built_in">size</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>str的用法:流和串的转换<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::stringstream ss;</span><br><span class="line">ss.<span class="built_in">str</span> (<span class="string">&quot;Example string&quot;</span>);</span><br><span class="line">std::string s = ss.<span class="built_in">str</span>();</span><br><span class="line">std::cout &lt;&lt; s &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br></pre></td></tr></table></figure>
 结果：Example string</li>
