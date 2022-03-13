@@ -28,7 +28,7 @@
 <meta property="og:description" content="总结回答问题重点">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-03T05:47:02.000Z">
-<meta property="article:modified_time" content="2022-03-11T12:50:55.776Z">
+<meta property="article:modified_time" content="2022-03-13T14:08:03.026Z">
 <meta property="article:author" content="ATing">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -65,7 +65,7 @@
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81C-%E8%AF%AD%E6%B3%95"><span class="toc-text">一、C++语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81MySQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">二、MySQL数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81redis"><span class="toc-text">三、redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">四、操作系统</span></a></li></ol></div></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81C-%E8%AF%AD%E6%B3%95"><span class="toc-text">一、C++语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81MySQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">二、MySQL数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81redis"><span class="toc-text">三、redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">四、操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">五、计算机网络</span></a></li></ol></div></div></div>
 
 
 </div>
@@ -264,6 +264,115 @@
 <li>协程vs线程</li>
 <li>inode，软/硬连接，文件描述符</li>
 <li>零拷贝</li>
+</ul>
+<h2 id="五、计算机网络"><a href="#五、计算机网络" class="headerlink" title="五、计算机网络"></a>五、计算机网络</h2><blockquote>
+<p>参考链接：<a href="https://github.com/Worthy-Wang/offerMachine/blob/main/Net.md">计网相关</a></p>
+</blockquote>
+<ul>
+<li><p>OSI七层模型：应用、表示、会话、传输、网络、数据链路、物理</p>
+</li>
+<li><p>有连接（需要连接并维持）、无连接、可靠、不可靠、有状态（记忆）、无状态</p>
+</li>
+<li><p>HTTP:请求报文（行、头、空行、体）、响应报文（状态行 + 响应头 + 空行 + 响应体）</p>
+</li>
+<li><p>状态码：1xx：信息，要求请求者继续操作；2xx，成功，OK表示客户端请求成功，200OK，客户端请求成功；3xx，重定向，需要进一步的操作以完成请求，301永久转移到其他URL，302网页临时跳转；4xx，客户端错误，请求包含语法错误或无法完成请求，400有语法错误，不能被服务器理解，401请求未经授权，404请求资源不存在；5xx，服务器错误，500服务器内部发生了不可预期的错误，503服务器不能处理客户端的请求。</p>
+</li>
+<li><p>get和post的区别：获取/发送，参数可见/不可见，安全/不安全，大小限制/无限制</p>
+</li>
+<li><p>输入URL发生了什么：DNS(域名转换IP地址)；浏览器连接到服务器HTTP/80端口，三次握手TCP连接；浏览器发送HTTP请求，读取URL域名后的文件发送给web服务器；服务器接收请求并返回HTTP响应，响应体中存放HTML文本；挥手释放TCP连接，keep-alive保持一段时间后再释放；浏览器解析html文本并显示。</p>
+</li>
+<li><p>长短连接的区别：CONNECTION字段:keep-alive/closed,HTTP1.0默认短连接，1.1默认长连接。</p>
+</li>
+<li><p>cookie和session：session存储在服务器中，数据可以保存在内存或数据库中；cookie存储在客户端浏览器中，会记录下该浏览器对应的sessionid，每次HTTP请求都会把sessionid发过来，这样服务器就能识别该用户了。</p>
+</li>
+<li><p>cookie被禁用：可以将URL重写，将sessionID直接附加在URL路径的后面。</p>
+</li>
+<li><p>HTTP和HTTPS</p>
+<ul>
+<li><p>对称加密算法：加密和解密采用同一个密钥。 这种加密方式由于需要传输密钥，所以有很大的安全性问题。常见的对称加密算法有DES，AES。</p>
+</li>
+<li><p>非对称加密算法：<strong>加密和解密使用的并不是同一个密钥</strong>。 通常有两个密钥，分别称为<strong>公钥</strong>和<strong>私钥</strong>，公钥可以对外公布，私钥只能持有人自己所拥有不能对外公开。非对称加密算法有效的避免了密钥的传输安全性问题。常见的非对称加密算法有<strong>RSA</strong>。</p>
+</li>
+<li><p>数字签名算法：非对称加密。</p>
+<ul>
+<li><p>数字签名<br>对于明文信息先进行哈希算法求得信息摘要，后再用自身私钥进行加密后求得数字签名。数字签名的作用是证明该信息是否为本人所写。</p>
+</li>
+<li><p>数字证书<br>将自身的公钥和一些相关信息，交给CA（certificate authority 认证机构）并利用CA的私钥进行加密后得到数字证书。数字证书的作用是传递公钥。</p>
+</li>
+</ul>
+</li>
+<li><p>HTTP优势：安全性，完整性，身份认证性，不可否认性</p>
+<p>HTTP Over SSL:SSL协议对浏览器与web服务器之间的通信进行了加密</p>
+<ol>
+<li> 用户向Web服务器发起访问请求；</li>
+<li>Web服务器将自己的CA认证的数字证书发给用户；</li>
+<li>用户拿到数字证书，并用自己浏览器内置的CA证书解密得到Web服务器的公钥；</li>
+<li>用户使用服务器的公钥对于对称加密算法的密钥进行加密，发送给Web服务器；</li>
+<li>服务器收到后，用自己的私钥解密，得到对称加密算法的密钥；</li>
+<li>双方使用对称加密算法开始通信。</li>
+</ol>
+</li>
+<li><p>总结：通过CA体系发送公钥（或者说是数字证书）；通过非对称加密算法确定对称加密的密钥；通过对称加密算法进行网络通信</p>
+</li>
+</ul>
+</li>
+<li><p>TCP协议：面向连接，可靠、基于字节流（发送接收没有边界限制）的全双工端对端通信协议</p>
+</li>
+<li><p>TCP头：源端口（16）、目的端口（16）、序列号（32）、确认号（32）、头部长度（4bit）：最小为20字节（0101），最大为60字节（1111） 保留（6bit） 标志位（6bit） 窗口大小（16bit）校验和（16）紧急指针（16）</p>
+</li>
+<li><p>三握四挥</p>
+</li>
+<li><p>两次可以吗？不，一是防止失效的SYN报文到达服务器，二是第二次的报文丢失服务器已经进入established状态。</p>
+</li>
+<li><p>挥手需四次？防止服务端有未完成传输的数据。</p>
+</li>
+<li><p>客户端2MSL?1.保证客户端最后发送的ACK到达客户端，2.防止旧连接中的报文影响新连接，所有报文在网络中已经消息</p>
+</li>
+<li><p>半连接/全连接：半连接SYN-REVD状态，全连接三次握手的连接。</p>
+</li>
+<li><p>SYN泛洪攻击：黑客伪造不存在的IP地址，向server端发送SYN请求，导致半连接状态队列满。</p>
+<ul>
+<li>过滤网关防护 ：如设置SYN代理，让代理为服务器处理SYN请求，如果收到了客户端的ACK包那么就向服务器完成三次握手。</li>
+<li>增大半连接队列容量</li>
+<li>缩短超时时间与减少重传次数</li>
+<li>SYNcookies技术</li>
+</ul>
+</li>
+<li><p>客户端故障：服务端会有一个Keep-Alive心跳包机制，也就是定期内会通过发送数据包检测客户端是否正常运行，那么就认为客户端已经出现故障， 服务器自动断开。</p>
+</li>
+<li><p>TCP可靠传输</p>
+<ul>
+<li>连接管理：三握四挥</li>
+<li>序列号+确认号</li>
+<li>校验和</li>
+<li>超时重传机制</li>
+<li>ARQ(停等ARQ,回退n帧ARQ,选择重传ARQ)</li>
+<li>滑动窗口流量控制：当接收缓冲区的剩余空间过小不能接收发送方的数据时，会提示发送方降低发送速率，从而防止丢包。</li>
+<li>拥塞控制：满开始，拥塞避免，快重传（3ACK），快恢复(3重复确认)</li>
+</ul>
+</li>
+<li><p>UDP(USER DATAGRAM PROTOCOL):无连接，不可靠，基于数据报。源端口号（16bit） + 目的端口号（16bit）UDP总长度（16bit）：此处的总长度为UDP 头部+数据部分 的长度，数据部分的长度受数据链路层MTU的限制，通常最大为1472字节（1500-20字节IP头部-8字节UDP头部）。UDP检验和（16bit）：当检验到错误时，UDP不做纠正，而是直接将数据丢弃。</p>
+</li>
+<li><p>TCP/UDP区别</p>
+<ul>
+<li>TCP是有连接，可靠的，基于字节流的协议；UDP是无连接，不可靠，基于数据报的协议</li>
+<li>TCP头部结构复杂，网络开销和时延都较大；UDP头部结构较为简单，网络开销和时延都较小。</li>
+<li>TCP能通过建立连接，确认序号，滑动窗口，超时重传，拥塞控制，检验和等方式让数据包安全准确的传到对端；UDP则是提供不可靠的交付。</li>
+<li>TCP一般用于文件传输，收发邮件，远程登录，HTTP等，UDP一般用于即时通信，比如语音，视频，直播，DNS等。</li>
+</ul>
+</li>
+<li><p>IP协议：无连接，不可靠，点对点。IP数据报头部最小为<strong>20</strong>个字节，最大为<strong>60</strong>个字节。</p>
+</li>
+<li><p>NAT协议的作用实现公网IP地址与私网IP地址之间的相互映射转换，使得一个公网IP地址下能够有多个私网IP。</p>
+<ul>
+<li>解决了IPv4地址枯竭的问题；</li>
+<li>主机的安全性得到了保障，因为就算暴露了私网IP也没有关系。</li>
+</ul>
+</li>
+<li><p>ARP</p>
+<p>从IP地址到MAC地址的映射。</p>
+<p>主机发送信息时将包含目标IP地址的ARP请求在局域网进行广播，并根据返回的消息确定目标IP地址的 MAC地址，以 &lt;IP，MAC&gt; 形式存入 ARP缓存表。</p>
+</li>
 </ul>
 
 
